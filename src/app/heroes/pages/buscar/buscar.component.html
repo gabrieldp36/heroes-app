@@ -1,1 +1,83 @@
-<p>buscar works!</p>
+<div 
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    class="animate__animated animate__bounceInDown">
+
+    <div 
+        fxFlex.lg="38"
+        fxFlex.md="45"
+        fxFlex.gt-md="45"
+        fxFlex.sm="58"
+        >
+
+        <div class="mt-2">
+
+            <mat-card>
+
+                <mat-card-header>
+
+                    <mat-card-title> Buscador de Héroes </mat-card-title>
+                    <mat-card-subtitle style="margin-top: 10px;"> Seleccioná a tu héroe </mat-card-subtitle>
+                    <br>
+                </mat-card-header>
+
+
+                <mat-divider></mat-divider>
+            </mat-card>
+
+        </div>
+        
+        <div>
+
+            <mat-card class="mt-2">
+
+                <mat-card-content style="margin-left: 16px;">
+            
+                    <form class="example-form">
+
+                        <mat-form-field color="accent"class="inpt-width">
+
+                            <mat-label>Buscar...</mat-label>
+
+                            <input 
+                                type="text"
+                                name="buscador"
+                                matInput
+                                [(ngModel)]="termino"
+                                [matAutocomplete]="auto"
+                                (input)="buscarSugerencias()"
+                                (blur)="limpiarSugerencias()"
+                            >
+
+                            <mat-autocomplete 
+                                autoActiveFirstOption 
+                                #auto="matAutocomplete"
+                                (optionSelected)="mostrarHeroe($event)">
+
+                                <mat-option *ngFor="let heroe of heroes" [value]="heroe">
+                                    
+                                    {{heroe.superhero}}
+                                    
+                                </mat-option>
+
+                                <mat-option value="" *ngIf="sinResultados && termino.length > 0 "> 
+                                    
+                                    <i> Sin resultados </i>
+                                
+                                </mat-option>
+
+                          </mat-autocomplete>
+
+                        </mat-form-field>
+                    </form>
+
+                </mat-card-content>
+
+            </mat-card>
+
+            <mat-card class="mat-background mt-2"> </mat-card>
+           
+        </div>
+    </div>
+</div>

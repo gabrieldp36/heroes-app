@@ -1,3 +1,25 @@
 html, body { height: 100%; }
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spacer {
+
+    flex: 1 1 auto;
+}
+
+.snakBarGuardar {
+
+    background: #198754 !important;
+    color: #69efae !important;
+    border-radius: 10px !important;
+}
+
+.dialogConfirm {
+
+    text-align: center !important;
+}
+
+.login-background {
+
+    background-color: #303030 !important;
+}

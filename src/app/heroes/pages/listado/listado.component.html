@@ -1,1 +1,58 @@
-<p>listado works!</p>
+<mat-card class="animate__animated animate__fadeIn animate__slow">
+
+    <mat-card-header>
+
+        <h1> Listado de Héroes </h1>
+        <br>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+</mat-card>
+
+<div 
+    fxLayout="row"
+    fxLayoutAlign="center"
+>
+    <div
+        *ngIf="error"
+        fxFlex="50"
+        style="border-radius: 20px;"
+        class="alert alert-danger mt-4 animate__animated animate__flipInX animate__fast">
+        <p>
+        <i> Disculpe las molestias, por el momento no podemos mostrarle el listado de heroes. 
+            Por favor intente nuevamente más tarde.</i>
+        </p> 
+    </div> 
+</div>
+
+<div 
+    *ngIf="heroes.length === 0 && !error; else divListado"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    style="margin-top: 200px; margin-bottom: 198px;">
+
+    <mat-spinner></mat-spinner>
+
+</div>
+
+<ng-template #divListado>
+
+    <div
+        fxLayout="row wrap"
+        fxLayout.xs="column"
+        fxLayoutAlign="center"
+        fxLayoutGap="20px"
+        class="animate__animated animate__zoomIn">
+
+        <div 
+            *ngFor="let heroe of heroes"
+            fxFlex="20"
+            fxFlex.lg="15"
+            fxFlex.sm="30">
+
+            <app-heroe-tarjeta [heroe] = "heroe" ></app-heroe-tarjeta>
+
+        </div>
+    </div>
+
+</ng-template>

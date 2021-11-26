@@ -8,6 +8,10 @@ import { LoginComponent } from './pages/login/login.component';
 
 import { RegistroComponent } from './pages/registro/registro.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { MaterialModule } from '../material/material.module';
+
 @NgModule({
 
   declarations: [
@@ -20,6 +24,8 @@ import { RegistroComponent } from './pages/registro/registro.component';
 
     CommonModule,
     AuthRoutingModule,
+    FlexLayoutModule,
+    MaterialModule,
   ]
 })
 export class AuthModule {};

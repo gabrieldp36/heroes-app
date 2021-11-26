@@ -1,1 +1,247 @@
-<p>heroe works!</p>
+<div 
+    fxLayout="row"
+    fxLayoutAlign="center"
+    >
+
+    <div    
+        *ngIf="error && error.status === 404"
+        fxFlex="50">
+
+        <div
+            style="border-radius: 20px;"
+            class="alert alert-danger mt-4 animate__animated animate__flipInX animate__fast">
+
+            <p>
+            <i> No se ha encontrado un héroe con el id ingresado.
+                Por favor regrese al listado de héroes o al buscador y seleccione un nuevo héroe.</i>
+            </p>
+
+        </div> 
+
+        <button 
+            mat-stroked-button 
+            color='accent' 
+            style="border-color: #303030; border-radius: 20px;"
+            (click)="irListado()">
+            
+            <mat-icon>style</mat-icon>
+
+            Regresar al listado
+        </button>
+
+        <button 
+            mat-stroked-button 
+            color='accent' 
+            style="border-color: #303030; border-radius: 20px;"
+            (click)="irBuscador()">
+
+            <mat-icon>search</mat-icon>
+
+            Regresar al buscador
+        </button>
+
+    </div>
+</div>
+
+<div 
+    fxLayout="row"
+    fxLayoutAlign="center"
+    >
+    <div    
+        *ngIf="error && error.status === 0"
+        fxFlex="50"
+        style="border-radius: 20px;"
+        class="alert alert-danger mt-4 animate__animated animate__flipInX animate__fast">
+            <p>
+            <i> Disculpe las molestias, por el momento no podemos mostrarle el héroe seleccionado. 
+                Por favor intente nuevamente más tarde..</i>
+            </p>
+    </div> 
+</div>
+
+<mat-grid-list 
+        cols="1"
+        rowHeight="550px"
+        *ngIf="!heroe && !error; else divHeroe">
+
+    <mat-grid-tile>
+
+        <mat-spinner></mat-spinner>
+
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<ng-template #divHeroe>
+
+   <div 
+        *ngIf="!error"
+        fxLayout="row"
+        fxLayout.xs="column"
+        fxLayoutAlign="center"
+        fxLayoutGap="50px"
+        style="margin-bottom: 74px;"
+        class="animate__animated animate__zoomIn"
+    >
+        <div 
+            fxFlex.lg="35"
+            fxFlex.md='45'>
+
+            <mat-card>
+
+                <mat-card-header>
+
+                    <mat-card-title> {{heroe.superhero | titlecase}} </mat-card-title>
+                    <mat-card-subtitle> {{heroe.alter_ego | titlecase}} </mat-card-subtitle>
+            
+                </mat-card-header>
+
+            <mat-divider></mat-divider>
+           
+            </mat-card>
+
+            <div style="text-align: center; margin-bottom: -30px;">
+
+                <div
+                    *ngIf="!imgLoad"
+                    style="width: 400px; max-width: 100%; height: 500px;"
+                     fxLayout="row"
+                     fxLayoutAlign="center center">
+                    
+                    <mat-spinner></mat-spinner>
+
+                </div>
+
+                <img 
+                    #imagen
+                    [hidden]="!imgLoad"
+                    [src]="heroe | imagen"
+                    class="animate__animated animate__fadeIn animate__slow"
+                    (load)="onLoadImg()"
+                    (error)="imagenError()">
+            </div>
+        </div>
+
+        <div fxFlex="35">
+
+            <mat-card>
+
+                <mat-card-header>
+
+                    <mat-card-title> {{heroe.publisher}} </mat-card-title>
+                    <br>
+                    <br>
+                    <br>
+
+                </mat-card-header>
+
+                <mat-divider></mat-divider>
+            </mat-card>
+
+            <div style="margin-top: 10px;">
+
+                <mat-card>
+
+                    <mat-card-header>
+
+                        <mat-divider></mat-divider>
+                     
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        
+                        <br>
+
+                        <p 
+                            *ngIf="heroe.first_appearance"
+                            class="tamaño-fuente" 
+                            style="line-height : 25px;"> 
+                            <i> Primera aparición: </i> 
+                            <span style="margin-left: 2px;"> {{heroe.first_appearance | titlecase}}. </span> 
+                        </p> 
+                    
+                        <p 
+                            *ngIf="heroe.characters"
+                            class="tamaño-fuente" 
+                            style="line-height : 25px;"> 
+                            <i> Personajes: </i> 
+                            <span style="margin-left: 2px;"> {{heroe.characters | titlecase}}. </span> 
+                        </p> 
+                    
+                        <p  
+                            *ngIf="heroe.publisher"
+                            class="tamaño-fuente" 
+                            style="line-height : 25px;"> 
+                            <i> Editorial: </i> 
+                            <span style="margin-left: 2px;"> {{heroe.publisher}}. </span> 
+                        </p> 
+                    
+                        <p 
+                            *ngIf="heroe.alter_ego"
+                            class="tamaño-fuente" 
+                            style="line-height : 25px;"> 
+                            <i> Alter Ego: </i> 
+                            <span style="margin-left: 2px;"> {{heroe.alter_ego | titlecase}}. </span> 
+                        </p>  
+                    
+                        <p
+                            *ngIf="heroe.habilities"
+                            class="tamaño-fuente" 
+                            style="line-height : 25px;"> 
+                            <i> Habilidades: </i> 
+                            <span style="margin-left: 2px;"> {{heroe.habilities}}. </span> 
+                        </p>  
+                        
+                    </mat-card-content>
+
+                    <mat-divider></mat-divider>
+                   
+                </mat-card>
+            </div>
+
+            <div style="margin-top: 10px;">
+                
+                <mat-card class="mat-background">
+
+                    <button 
+                        mat-stroked-button 
+                        color='accent' 
+                        style="border-color: #7b1fa2; border-radius: 20px;"
+                        (click)="irListado()">
+
+                        <mat-icon>style</mat-icon>
+
+                        Ir al listado 
+                    </button>
+
+                    <button 
+                        mat-stroked-button 
+                        color='accent' 
+                        style="border-color: #7b1fa2; border-radius: 20px;"
+                        (click)="irBuscador()">
+
+                        <mat-icon>search</mat-icon>
+
+                        Ir al buscador
+                    </button>
+
+                    <button 
+                        mat-stroked-button  
+                        style="border-color: #7b1fa2; border-radius: 20px; color: #ffd645 !important;"
+                        (click)="irEditar()">
+
+                        <mat-icon>edit</mat-icon>
+
+                        Ir a editar
+                    </button>
+                   
+                </mat-card>
+                
+            </div>
+
+        </div>
+        
+   </div>
+
+</ng-template>
+
