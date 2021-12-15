@@ -22,4 +22,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .login-background {
 
     background-color: #303030 !important;
+    width: 100%;
+    height: 100%;
 }
