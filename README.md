@@ -1,27 +1,35 @@
-# HeroesApp
+# Héroes App.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+Esta aplicación permite coleccionar tus héroes favoritos de DC-Comics y Marvel-Comics.
 
-## Development server
+La misma fue completamente diseñada con Material Design, para brindar al usuario una vista amigable y estilizada de la aplicación.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Pueden consultar el listado de héroes, agregar nuevos personajes a la colección, editar los existentes o borrar aquellos que deseen.
 
-## Code scaffolding
+También permite realizar búsquedas con sugerencias en tiempo real.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Pueden visitar la App haciendo click en este https://heroes-app-gdp.herokuapp.com/
 
-## Build
+----Al entrar a la aplicación y pulsar el botón ingresar, aguarden por favor unos segundos a que Heroku reactive el servidor de pruebas que consume la app. Luego de ello, se concreta el ingreso a la misma. Muchas gracias!!----
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Notas:
 
-## Running unit tests
+Este proyecto fue generado con [Angular CLI] versión 12.2.9.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Recuerden reconstruir los módulos de Node:
 
-## Running end-to-end tests
+```
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Y luego, para probar la app en desarrollo, ejecuten el siguiente comando:
 
-## Further help
+```
+ng serve -o
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para construir el build, recuerden:
+
+```
+ng build --configuration=production
+```
