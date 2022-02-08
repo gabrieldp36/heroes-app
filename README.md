@@ -2,7 +2,7 @@
 
 Esta aplicación permite coleccionar tus héroes favoritos de DC-Comics y Marvel-Comics.
 
-La misma fue completamente diseñada con Material Design, para brindar al usuario una vista amigable y estilizada de la aplicación.
+La misma fue completamente diseñada con Material Design y Angular Flex Layout, para brindar al usuario una vista amigable y estilizada de la aplicación, junto con una experencia responsive.
 
 Pueden consultar el listado de héroes, agregar nuevos personajes a la colección, editar los existentes o borrar aquellos que deseen.
 
