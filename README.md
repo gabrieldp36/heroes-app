@@ -1,3 +1,5 @@
+![portada](https://github.com/gabrieldp36/heroes-app/assets/88417383/f71771fb-160b-4b46-a817-7f12a3ff890f)
+
 # Héroes App.
 
 Esta aplicación permite coleccionar tus héroes favoritos de DC-Comics y Marvel-Comics.
@@ -8,13 +10,13 @@ Pueden consultar el listado de héroes, agregar nuevos personajes a la colecció
 
 También permite realizar búsquedas con sugerencias en tiempo real.
 
-Pueden visitar la App haciendo click en el siguiente enlace: https://heroes-app-gdp.herokuapp.com/
+Pueden visitar la App haciendo click en el siguiente enlace: https://heroes-app-gdp.netlify.app
 
 ----Al entrar a la aplicación y pulsar el botón ingresar, aguarden por favor unos segundos a que Heroku reactive el servidor de pruebas que consume la app. Luego de ello, se concreta el ingreso a la misma. Muchas gracias!!----
 
 ### Notas:
 
-Este proyecto fue generado con [Angular CLI] versión 12.2.9.
+Este proyecto fue generado con [Angular CLI] versión 13.0.1.
 
 Recuerden reconstruir los módulos de Node:
 
