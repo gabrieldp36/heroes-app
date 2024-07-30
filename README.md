@@ -10,9 +10,7 @@ Pueden consultar el listado de héroes, agregar nuevos personajes a la colecció
 
 También permite realizar búsquedas con sugerencias en tiempo real.
 
-Pueden visitar la App haciendo click en el siguiente enlace: https://heroes-app-gdp.netlify.app
-
-----Al entrar a la aplicación y pulsar el botón ingresar, aguarden por favor unos segundos a que Heroku reactive el servidor de pruebas que consume la app. Luego de ello, se concreta el ingreso a la misma. Muchas gracias!!----
+Pueden visitar la App haciendo click en el siguiente enlace: https://json-server-d6jd.onrender.com
 
 ### Notas:
 
